@@ -31,9 +31,9 @@ end
 }
 
 @terms.each do |term, pagename|
-  warn "Fetching #{term}"
   url = "#{@WIKI}/wiki/#{pagename}"
   page = noko(url)
+  added = 0
 
   page.xpath('//table[.//th[text()[contains(.,"Member")]]]').each_with_index do |ct, i|
     next if ct.xpath('.//th[text()[contains(.,"Proportion")]]').any?
@@ -52,8 +52,10 @@ end
       }
       data[:wikipedia].prepend @WIKI unless data[:wikipedia].empty?
       # puts data.values.to_csv
+      added += 1
       ScraperWiki.save_sqlite([:name], data)
     end
   end
+  warn "Added #{added} for #{term}"
 end
 
