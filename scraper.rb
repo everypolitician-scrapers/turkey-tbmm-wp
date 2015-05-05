@@ -23,7 +23,7 @@ def wikilink(a)
 end
 
 @terms = {
-  # '24' => "24th_Parliament_of_Turkey",
+  '24' => "24th_Parliament_of_Turkey",
   '23' => "23rd_Parliament_of_Turkey",
 }
 
