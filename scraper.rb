@@ -26,6 +26,7 @@ end
   '24' => "24th_Parliament_of_Turkey",
   '23' => "23rd_Parliament_of_Turkey",
   '22' => "22nd_Parliament_of_Turkey",
+  '21' => "21st_Parliament_of_Turkey",
 }
 
 @terms.each do |term, pagename|
