@@ -53,7 +53,7 @@ end
       data[:wikipedia].prepend @WIKI unless data[:wikipedia].empty?
       # puts data.values.to_csv
       added += 1
-      ScraperWiki.save_sqlite([:name], data)
+      ScraperWiki.save_sqlite([:name, :term], data)
     end
   end
   warn "Added #{added} for #{term}"
