@@ -25,6 +25,7 @@ end
 @terms = {
   '24' => "24th_Parliament_of_Turkey",
   '23' => "23rd_Parliament_of_Turkey",
+  '22' => "22nd_Parliament_of_Turkey",
 }
 
 @terms.each do |term, pagename|
@@ -40,7 +41,7 @@ end
       tds = member.xpath('td')
 
       data = { 
-        name: tds.first.css('a').first.text.strip,
+        name: tds.first.at_xpath('a') ? tds.first.xpath('a').text.strip : tds.first.text.strip,
         wikipedia: tds.first.xpath('a[not(@class="new")]/@href').text.strip,
         party: tds.last.at_xpath('a') ? tds.last.xpath('a').text.strip : tds.last.text.strip,
         constituency: district,
