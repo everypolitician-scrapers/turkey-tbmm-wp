@@ -3,13 +3,10 @@
 
 require 'scraperwiki'
 require 'nokogiri'
-require 'date'
 require 'open-uri'
+require 'pry'
 
 # require 'open-uri/cached'
-# require 'colorize'
-# require 'pry'
-# require 'csv'
 
 def noko(url)
   Nokogiri::HTML(open(url).read) 
